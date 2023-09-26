@@ -16,7 +16,7 @@
 
 # How to use
 
-<p>>>pip install pybonet</p>
+<p>>>git clone https://github.com/Keidi16/PYBOTNET.git</p>
 <p>>>chmod +x bot.py </p>
 <p>>>python3 bot.py</p>
 
