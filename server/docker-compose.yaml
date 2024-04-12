@@ -1,0 +1,16 @@
+version: '3.7'
+
+services:
+  postgres:
+    image: bitnami/postgresql:latest
+    ports:
+      - '5432:5432'
+    environment:
+      - POSTGRES_USER=rex
+      - POSTGRES_PASSWORD=rex
+      - POSTGRES_DB=rex
+    volumes:
+      - rex_pg_data:/bitnami/postgresql
+
+volumes:
+  rex_pg_data:
